@@ -16,40 +16,51 @@ namespace CDManager
         #endregion
 
         #region Private Methods
-        public CD GetByID(int ID)
-        {
-            return Data.FirstOrDefault(a => a.ID == ID);
-        }
+        //public CD GetByID(int ID)
+        //{
+        //    return Data.FirstOrDefault(a => a.ID == ID);
+        //}
         #endregion
 
         #region Public Methods
         public void AddNew()
         {
             CD cd = new CD();
-            cd.input();
-            if (this.GetByID(cd.ID) != null)
-            {
-                Console.WriteLine("Duplicated ID."); // hoi ki ki
-                return;
-            }
+            cd.input(this.Data);
             Data.Add(cd);
             Console.WriteLine("A new CD has been added.");
         }
         public void Update()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            // Input
             Console.Write("Enter ID: ");
             int ID = int.Parse(Console.ReadLine());
+            // Get CD by ID
             CD cd = Data.FirstOrDefault(a => a.ID == ID);
-            if (cd==null)
+            // Process
+            if (cd == null)
             {
                 Console.WriteLine("The CD is not found");
                 return;
             }
-            cd.input();
+            cd.input(this.Data);
             Console.WriteLine("The CD has been updated.");
         }
         public void Delete()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            // Input
             Console.Write("Enter ID: ");
             int ID = int.Parse(Console.ReadLine());
             CD cd = Data.First(a => a.ID == ID);
@@ -63,48 +74,164 @@ namespace CDManager
         }
         public void SortByAlbum()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            int asc = 1;
+            while (true)
+            {
+                try
+                {
+                    // Input
+                    Console.WriteLine("Do you want to sort in: 1-Ascending order. 2- Descending order.");
+                    asc = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid");
+                }
+            }
+
             this.Data = this.Data.OrderBy(a => a.Album).ToList<CD>();
+            if (asc != 1)
+            {
+                this.Data.Reverse();
+            }
+
+            Console.WriteLine("The list has been sorted.");
         }
         public void SortBySinger()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            int asc = 1;
+            while (true)
+            {
+                try
+                {
+                    // Input
+                    Console.WriteLine("Do you want to sort in: 1-Ascending order. 2- Descending order.");
+                    asc = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid");
+                }
+            }
+
             this.Data = this.Data.OrderBy(a => a.Singer).ToList<CD>();
+            if (asc != 1)
+            {
+                this.Data.Reverse();
+            }
+
+            Console.WriteLine("The list has been sorted.");
         }
         public void ListAll()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
             foreach (var cd in this.Data)
             {
                 Console.WriteLine(cd.ToString());
             }
         }
-        public List<CD> SearchByAlbum()
+        public void SearchByAlbum()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            // Input
             Console.Write("Enter Album: ");
             var searchValue = Console.ReadLine();
             var result =
                 from a in this.Data
                 where a.Album.Contains(searchValue)
                 select a;
-            return result.ToList<CD>();
+            if (result.Count() == 0)
+            {
+                Console.WriteLine("No results.");
+            }
+            else
+            {
+                Console.WriteLine("Search results:");
+                foreach (var item in result.ToList())
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
         }
-        public List<CD> SearchBySinger()
+        public void SearchBySinger()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            // Input
             Console.Write("Enter Singer: ");
             var searchValue = Console.ReadLine();
             var result =
                 from a in this.Data
                 where a.Singer.Contains(searchValue)
                 select a;
-            return result.ToList<CD>();
+            if (result.Count() == 0)
+            {
+                Console.WriteLine("No results.");
+            }
+            else
+            {
+                Console.WriteLine("Search results:");
+                foreach (var item in result.ToList())
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
         }
-        public List<CD> SearchBySong()
+        public void SearchBySong()
         {
+            // Check if empty
+            if (this.Data.Count() == 0)
+            {
+                Console.WriteLine("The list is empty.");
+                return;
+            }
+            // Input
             Console.Write("Enter Singer: ");
             var searchValue = Console.ReadLine();
             var result =
                 from a in this.Data
                 where a.Songs.FirstOrDefault(b => b.Name.Contains(searchValue)) != null
                 select a;
-            return result.ToList<CD>();
+            if (result.Count() == 0)
+            {
+                Console.WriteLine("No results.");
+            }
+            else
+            {
+                Console.WriteLine("Search results:");
+                foreach (var item in result.ToList())
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
         }
         #endregion
     }

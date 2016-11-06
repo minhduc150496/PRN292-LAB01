@@ -17,6 +17,10 @@ namespace CDManager
         {
             return this.Name == other.Name;
         }
+        public override string ToString()
+        {
+            return this.Name;
+        }
         #endregion
 
         #region Normal Methods

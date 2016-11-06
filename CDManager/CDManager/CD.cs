@@ -25,21 +25,27 @@ namespace CDManager
         #region Override Methods
         public override string ToString()
         {
-            return base.ToString();
+            string s = "";
+            s += "ID\t: " + ID + "\n";
+            s += "Album\t: " + Album + "\n";
+            s += "Singer\t: " + Singer + "\n";
+            s += "Duration\t: " + Duration + "\n";
+            s += "Songs\t: " + string.Join(", ",Songs);
+            return s;
         }
         #endregion
 
         #region Normal Methods
-        public void input()
+        public void input(List<CD> data)
         {
-            inputID();
+            inputID(data);
             inputAlbum();
             inputSinger();
             inputDuration();
             inputSong();
             inputGenre();
         }
-        public void inputID()
+        public void inputID(List<CD> data)
         {
             while (true)
             {
@@ -47,6 +53,11 @@ namespace CDManager
                 {
                     Console.Write("Enter ID: ");
                     this.ID = int.Parse(Console.ReadLine());
+                    if (data.FirstOrDefault(a => a.ID==this.ID) != null)
+                    {
+                        Console.WriteLine("Duplicated ID.");
+                        continue;
+                    }
                     break;
                 }
                 catch (Exception ex)
@@ -133,7 +144,10 @@ namespace CDManager
             {
                 try
                 {
-                    Console.Write("Enter Genre: ");
+                    Console.Write("Enter Genre (");
+                    var genres = Enum.GetValues(typeof(CDGenre)).Cast<CDGenre>(); // Cast la gi vay???
+                    Console.Write(string.Join(", ", genres));
+                    Console.Write("): ");
                     if (Enum.TryParse<CDGenre>(Console.ReadLine(), out this.Genre))
                     {
                         break;
