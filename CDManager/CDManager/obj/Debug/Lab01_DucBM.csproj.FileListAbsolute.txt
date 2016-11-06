@@ -1,0 +1,6 @@
+D:\DaiHoc\2016 Fall\CS\Code\CDManager\CDManager\bin\Debug\CDManager.exe.config
+D:\DaiHoc\2016 Fall\CS\Code\CDManager\CDManager\bin\Debug\CDManager.exe
+D:\DaiHoc\2016 Fall\CS\Code\CDManager\CDManager\bin\Debug\CDManager.pdb
+D:\DaiHoc\2016 Fall\CS\Code\CDManager\CDManager\obj\Debug\Lab01_DucBM.csprojResolveAssemblyReference.cache
+D:\DaiHoc\2016 Fall\CS\Code\CDManager\CDManager\obj\Debug\CDManager.exe
+D:\DaiHoc\2016 Fall\CS\Code\CDManager\CDManager\obj\Debug\CDManager.pdb
