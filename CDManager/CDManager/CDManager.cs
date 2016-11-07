@@ -25,9 +25,12 @@ namespace CDManager
         #region Public Methods
         public void AddNew()
         {
+            // Input
             CD cd = new CD();
             cd.input(this.Data);
+            // Add
             Data.Add(cd);
+            // Notice success
             Console.WriteLine("A new CD has been added.");
         }
         public void Update()
