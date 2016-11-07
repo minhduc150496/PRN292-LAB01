@@ -49,7 +49,7 @@ namespace CDManager
                 Console.WriteLine("The CD is not found");
                 return;
             }
-            cd.input(this.Data);
+            cd.update();
             Console.WriteLine("The CD has been updated.");
         }
         public void Delete()
@@ -63,7 +63,7 @@ namespace CDManager
             // Input
             Console.Write("Enter ID: ");
             int ID = int.Parse(Console.ReadLine());
-            CD cd = Data.First(a => a.ID == ID);
+            CD cd = Data.FirstOrDefault(a => a.ID == ID);
             if (cd == null)
             {
                 Console.WriteLine("The CD is not found");
@@ -86,7 +86,7 @@ namespace CDManager
                 try
                 {
                     // Input
-                    Console.WriteLine("Do you want to sort in: 1-Ascending order. 2- Descending order.");
+                    Console.WriteLine("Do you want to sort by Album in: 1-Ascending order. 2- Descending order.");
                     asc = int.Parse(Console.ReadLine());
                     break;
                 }
@@ -118,7 +118,7 @@ namespace CDManager
                 try
                 {
                     // Input
-                    Console.WriteLine("Do you want to sort in: 1-Ascending order. 2- Descending order.");
+                    Console.WriteLine("Do you want to sort by Singer in: 1-Ascending order. 2- Descending order.");
                     asc = int.Parse(Console.ReadLine());
                     break;
                 }

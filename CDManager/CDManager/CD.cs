@@ -19,23 +19,32 @@ namespace CDManager
 
         public CD()
         {
-            
+
         }
 
         #region Override Methods
         public override string ToString()
         {
             string s = "";
-            s += "ID\t: " + ID + "\n";
-            s += "Album\t: " + Album + "\n";
-            s += "Singer\t: " + Singer + "\n";
+            s += "ID\t\t: " + ID + "\n";
+            s += "Album\t\t: " + Album + "\n";
+            s += "Singer\t\t: " + Singer + "\n";
             s += "Duration\t: " + Duration + "\n";
-            s += "Songs\t: " + string.Join(", ",Songs);
+            s += "Songs\t\t: " + string.Join(", ", Songs) + "\n";
+            s += "Genre\t\t: " + Genre + "\n";
             return s;
         }
         #endregion
 
         #region Normal Methods
+        public void update()
+        {
+            inputAlbum();
+            inputSinger();
+            inputDuration();
+            inputSong();
+            inputGenre();
+        }
         public void input(List<CD> data)
         {
             inputID(data);
@@ -53,7 +62,7 @@ namespace CDManager
                 {
                     Console.Write("Enter ID: ");
                     this.ID = int.Parse(Console.ReadLine());
-                    if (data.FirstOrDefault(a => a.ID==this.ID) != null)
+                    if (data.FirstOrDefault(a => a.ID == this.ID) != null)
                     {
                         Console.WriteLine("Duplicated ID.");
                         continue;
@@ -125,7 +134,7 @@ namespace CDManager
                     this.Songs = new List<Song>();
                     for (int i = 0; i < n; i++)
                     {
-                        Console.WriteLine("Enter the song No.{0}", i+1);
+                        Console.WriteLine("Enter the song No.{0}", i + 1);
                         Song song = new Song();
                         song.input();
                         this.Songs.Add(song);
@@ -151,7 +160,8 @@ namespace CDManager
                     if (Enum.TryParse<CDGenre>(Console.ReadLine(), out this.Genre))
                     {
                         break;
-                    } else
+                    }
+                    else
                     {
                         Console.WriteLine("Invalid.");
                     }

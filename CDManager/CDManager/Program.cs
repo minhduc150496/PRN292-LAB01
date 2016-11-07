@@ -21,7 +21,7 @@ namespace CDManager
             menu.Add("List all CD.");
             menu.Add("Search CD by Album.");
             menu.Add("Search CD by Singer.");
-            menu.Add("Search CD by song.");
+            menu.Add("Search CD by Song.");
 
             bool stop = false;
             do
@@ -63,6 +63,11 @@ namespace CDManager
                         break;
                 }
                 Console.WriteLine();
+                if (!stop)
+                {
+                    Console.WriteLine("Press ANY KEY to continue.");
+                    Console.ReadKey(true);
+                }
             } while (!stop);
         }
     }
