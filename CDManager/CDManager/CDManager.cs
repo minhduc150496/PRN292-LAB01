@@ -30,7 +30,7 @@ namespace CDManager
             cd.input(this.Data);
             // Add
             Data.Add(cd);
-            // Notice success
+            // Notice: success
             Console.WriteLine("A new CD has been added.");
         }
         public void Update()
