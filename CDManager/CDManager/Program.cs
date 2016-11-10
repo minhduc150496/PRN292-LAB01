@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CDLibrary;
+using LibraryProject;
 
 // bet: milk tea + chicken rice
 
@@ -13,17 +13,10 @@ namespace Lab02_DucBM
     {
         static void Main(string[] args)
         {
-            CDManager cm = new CDManager();
+            FilesManager manager = new FilesManager();
             Menu menu = new Menu();
-            menu.Add("Add new CD.");
-            menu.Add("Update a CD by ID.");
-            menu.Add("Delete a CD by ID.");
-            menu.Add("Sort by Album.");
-            menu.Add("Sort by Singer.");
-            menu.Add("List all CD.");
-            menu.Add("Search CD by Album.");
-            menu.Add("Search CD by Singer.");
-            menu.Add("Search CD by Song.");
+            menu.Add("Enter file content.");
+            menu.Add("Read file content.");
 
             bool stop = false;
             do
@@ -34,31 +27,10 @@ namespace Lab02_DucBM
                 switch (choice)
                 {
                     case 1:
-                        cm.AddNew();
+                        manager.EnterFileContent();
                         break;
                     case 2:
-                        cm.Update();
-                        break;
-                    case 3:
-                        cm.Delete();
-                        break;
-                    case 4:
-                        cm.SortByAlbum();
-                        break;
-                    case 5:
-                        cm.SortBySinger();
-                        break;
-                    case 6:
-                        cm.ListAll();
-                        break;
-                    case 7:
-                        cm.SearchByAlbum();
-                        break;
-                    case 8:
-                        cm.SearchBySinger();
-                        break;
-                    case 9:
-                        cm.SearchBySong();
+                        manager.ReadFileContent();
                         break;
                     default:
                         stop = true;

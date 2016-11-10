@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02_DucBM", "CDManager\Lab02_DucBM.csproj", "{0FA25EE8-96DF-47B4-8E64-ACF51898552F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProject", "CDManager\MainProject.csproj", "{0FA25EE8-96DF-47B4-8E64-ACF51898552F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLibrary", "CarLibrary\CDLibrary.csproj", "{F7FCDC70-BD38-4CDC-B38B-246A838ADDD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryProject", "CarLibrary\LibraryProject.csproj", "{F7FCDC70-BD38-4CDC-B38B-246A838ADDD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
