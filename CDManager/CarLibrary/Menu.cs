@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CDManager
+namespace CDLibrary
 {
-    class Menu
+    public class Menu
     {
         public List<string> Choices = new List<string>();
         public Menu()

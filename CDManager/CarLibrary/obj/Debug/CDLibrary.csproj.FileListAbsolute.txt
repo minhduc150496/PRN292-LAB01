@@ -1,0 +1,5 @@
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CarLibrary\bin\Debug\CDLibrary.dll
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CarLibrary\bin\Debug\CDLibrary.pdb
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CarLibrary\obj\Debug\CDLibrary.csprojResolveAssemblyReference.cache
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CarLibrary\obj\Debug\CDLibrary.dll
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CarLibrary\obj\Debug\CDLibrary.pdb

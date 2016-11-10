@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CDManager
+namespace CDLibrary
 {
-    class CDManager
+    public class CDManager
     {
         #region Fields
         List<CD> Data = new List<CD>();
@@ -42,8 +42,20 @@ namespace CDManager
                 return;
             }
             // Input
-            Console.Write("Enter ID: ");
-            int ID = int.Parse(Console.ReadLine());
+            int ID = 0;
+            while (true)
+            {
+                Console.Write("Enter ID: ");
+                try
+                {
+                    ID = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid!");
+                }
+            }
             // Get CD by ID
             CD cd = Data.FirstOrDefault(a => a.ID == ID);
             // Process
@@ -64,8 +76,21 @@ namespace CDManager
                 return;
             }
             // Input
-            Console.Write("Enter ID: ");
-            int ID = int.Parse(Console.ReadLine());
+            int ID = 0;
+            while (true)
+            {
+                Console.Write("Enter ID: ");
+                try
+                {
+                    ID = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid!");
+                }
+            }
+            // Process
             CD cd = Data.FirstOrDefault(a => a.ID == ID);
             if (cd == null)
             {

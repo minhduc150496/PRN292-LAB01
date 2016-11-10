@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CDManager
+namespace CDLibrary
 {
-    class Song
+    public class Song
     {
         #region Fields
         public string Name;

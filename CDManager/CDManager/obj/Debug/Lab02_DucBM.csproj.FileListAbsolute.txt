@@ -1,0 +1,8 @@
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\bin\Debug\CDManager.exe.config
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\bin\Debug\CDManager.exe
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\bin\Debug\CDManager.pdb
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\bin\Debug\CDLibrary.dll
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\bin\Debug\CDLibrary.pdb
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\obj\Debug\Lab02_DucBM.csprojResolveAssemblyReference.cache
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\obj\Debug\CDManager.exe
+D:\DaiHoc\2016 Fall\CS\Code\PRN292-LAB02\CDManager\CDManager\obj\Debug\CDManager.pdb

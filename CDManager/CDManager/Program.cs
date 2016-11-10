@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CDLibrary;
+
 // bet: milk tea + chicken rice
 
-namespace CDManager
+namespace Lab02_DucBM
 {
     class Program
     {

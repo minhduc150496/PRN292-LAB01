@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CDManager
+namespace CDLibrary
 {
-    class CD
+    public class CD
     {
         #region Fields
         public int ID;
@@ -16,11 +16,11 @@ namespace CDManager
         public List<Song> Songs;
         public CDGenre Genre;
         #endregion
-
         public CD()
         {
 
         }
+        public static int x;
 
         #region Override Methods
         public override string ToString()
@@ -115,6 +115,11 @@ namespace CDManager
                 {
                     Console.Write("Enter Duration: ");
                     this.Duration = long.Parse(Console.ReadLine());
+                    if (this.Duration <= 0)
+                    {
+                        Console.WriteLine("Invalid");
+                        continue;
+                    }
                     break;
                 }
                 catch (Exception ex)
@@ -157,7 +162,15 @@ namespace CDManager
                     var genres = Enum.GetValues(typeof(CDGenre)).Cast<CDGenre>(); // Cast la gi vay???
                     Console.Write(string.Join(", ", genres));
                     Console.Write("): ");
-                    if (Enum.TryParse<CDGenre>(Console.ReadLine(), out this.Genre))
+                    var sGenre = Console.ReadLine();
+                    try
+                    {
+                        int.Parse(sGenre);
+                        Console.WriteLine("Invalid");
+                        continue;
+                    }
+                    catch (Exception) {}
+                    if (Enum.TryParse<CDGenre>(sGenre, out this.Genre))
                     {
                         break;
                     }
